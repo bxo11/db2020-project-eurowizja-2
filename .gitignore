@@ -7,3 +7,4 @@
 *.pyc
 *.class
 *.log
+/src/sql/__pycache__

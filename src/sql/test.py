@@ -20,8 +20,8 @@ def execute(SQL_string):
             cursor.execute(SQL_string)
             result = cursor.fetchall()
             
-    finally:
-        connection.close()
+        finally:
+            connection.close()
     
     
     return result
