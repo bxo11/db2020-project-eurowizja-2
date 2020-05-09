@@ -6,7 +6,7 @@ Tutaj ma znaleźć się skrótowy opis projektu. W tabeli poniżej proszę uzupe
 | Nazwisko i imię | Wydział | Kierunek | Semestr | Grupa | Rok akademicki |
 | :-------------: | :-----: | :------: | :-----: | :---: | :------------: |
 | Krzysztof Jarek         | WIMiIP  | IS       |   4     | 3     | 2019/2020      |
-| Krzsztof Klimczyk        | WIMiIP  | IS       |   4     | 3     | 2019/2020      |
+| Krzysztof Klimczyk        | WIMiIP  | IS       |   4     | 3     | 2019/2020      |
 
 ## Projekt bazy danych
 Tutaj ma znaleźć się opis projektu bazy danych. Na wstępie proszę zagnieździć obraz schematu w formie wektorowej, najlepiej plik SVG. Dodatkowo, w tej sekcji należy zawrzeć kilka przykładowych zapytań tworzących (lub w razie konieczności, modyfikujących) tabelę, tj. grupa DDL.
