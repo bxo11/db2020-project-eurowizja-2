@@ -12,6 +12,18 @@ Tutaj ma znaleźć się skrótowy opis projektu. W tabeli poniżej proszę uzupe
 Tutaj ma znaleźć się opis projektu bazy danych. Na wstępie proszę zagnieździć obraz schematu w formie wektorowej, najlepiej plik SVG. Dodatkowo, w tej sekcji należy zawrzeć kilka przykładowych zapytań tworzących (lub w razie konieczności, modyfikujących) tabelę, tj. grupa DDL.
 
 ## Implementacja zapytań SQL
+1. Losowe przyznawanie punktów każdemu wykonawcy
+2. Wylistowanie pierwszej trójki wykonawców o największej liczbie punktów
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
+9. 
+10. 
+11. 
+12. 
 Tutaj należy wylistować wszystkie funkcjonalności, wraz z odpowiednimi zapytaniami SQL. W tej sekcji należy zawrzeć wyłącznie zapytania z grupy DML oraz DQL.
 
 ## Aplikacja
