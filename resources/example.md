@@ -1,7 +1,4 @@
-# Temat projektu
-**WAŻNE: CAŁY TEKST, KTÓRY SIĘ TUTAJ ZNAJDUJE, MA ZOSTAĆ USUNIĘTY!** Powinny zostać wyłącznie nagłówki (oznaczone znakiem #) oraz tabela z nazwiskami.
-Tutaj ma znaleźć się skrótowy opis projektu. W tabeli poniżej proszę uzupełnić swoje nazwisko i imię
-.
+# Eurowizja.
 
 | Nazwisko i imię | Wydział | Kierunek | Semestr | Grupa | Rok akademicki |
 | :-------------: | :-----: | :------: | :-----: | :---: | :------------: |
@@ -12,18 +9,19 @@ Tutaj ma znaleźć się skrótowy opis projektu. W tabeli poniżej proszę uzupe
 Tutaj ma znaleźć się opis projektu bazy danych. Na wstępie proszę zagnieździć obraz schematu w formie wektorowej, najlepiej plik SVG. Dodatkowo, w tej sekcji należy zawrzeć kilka przykładowych zapytań tworzących (lub w razie konieczności, modyfikujących) tabelę, tj. grupa DDL.
 
 ## Implementacja zapytań SQL
-1. Losowe przyznawanie punktów każdemu wykonawcy
-2. Wylistowanie pierwszej trójki wykonawców o największej liczbie punktów
-3. 
-4. 
-5. 
-6. 
-7. 
-8. 
+1. Dodanie wykonawcy/zespołu.
+2. Wyświetlenie zwycięscy wraz z danymi.
+3. Wyświetlenie zwycięskiej trójki.
+4. Wylistowanie wszystkich wykonawców według ilości przyznanych punktów.
+5. Wylistowanie wszystkich wykonawców wraz z ich danymi.
+6. Wyświetlenie wszystkich państw.
+7. Wyświetlenie wszystkich piosenek.
+8. Wylistowanie wszystkich piosenek alfabetycznie.
 9. 
 10. 
-11. 
-12. 
+11. Zakualizowanie ilości punktów uczestnika.
+12. Usunięcie uczestnika.
+
 Tutaj należy wylistować wszystkie funkcjonalności, wraz z odpowiednimi zapytaniami SQL. W tej sekcji należy zawrzeć wyłącznie zapytania z grupy DML oraz DQL.
 
 ## Aplikacja
