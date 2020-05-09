@@ -17,8 +17,8 @@ Tutaj ma znaleźć się opis projektu bazy danych. Na wstępie proszę zagnieźd
 6. Wyświetlenie wszystkich państw.
 7. Wyświetlenie wszystkich piosenek.
 8. Wylistowanie wszystkich piosenek alfabetycznie.
-9. 
-10. 
+9. Zakualizowanie piosenki.
+10. Zakualizowanie danych osobowych.
 11. Zakualizowanie ilości punktów uczestnika.
 12. Usunięcie uczestnika.
 
