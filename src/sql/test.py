@@ -1,4 +1,3 @@
-import os
 import pymysql
 
 
@@ -6,8 +5,8 @@ def execute(SQL_string):
     
     connection = pymysql.Connect(
         host = 'localhost',
-        user = os.getenv('root'),
-        db   = os.getenv('eurowizja'),
+        user = 'root',
+        db   = 'eurowizja',
         charset     = 'utf8mb4',
         cursorclass = pymysql.cursors.DictCursor
     )
