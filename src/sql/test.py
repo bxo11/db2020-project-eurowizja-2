@@ -1,4 +1,5 @@
 import pymysql
+import sys
 
 
 def execute(SQL_string):
@@ -19,8 +20,10 @@ def execute(SQL_string):
             cursor.execute(SQL_string)
             result = cursor.fetchall()
             
+        except Exception as excep:
+            print("Error: {0}".format(excep))
+            
         finally:
-            connection.close()
-    
+            cursor.close()
     
     return result
