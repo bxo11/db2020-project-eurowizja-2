@@ -14,7 +14,7 @@ Tutaj ma znaleźć się opis projektu bazy danych. Na wstępie proszę zagnieźd
 3. Wyświetlenie zwycięskiej trójki.
 4. Wylistowanie wszystkich wykonawców według ilości przyznanych punktów.
 5. Wylistowanie wszystkich wykonawców wraz z ich danymi.
-6. Wyświetlenie wszystkich państw.
+6. Wyświetlenie wszystkich państw i ilości uczestników dla każdego państwa.
 7. Wyświetlenie wszystkich piosenek.
 8. Wylistowanie wszystkich piosenek alfabetycznie.
 9. Zakualizowanie piosenki.
