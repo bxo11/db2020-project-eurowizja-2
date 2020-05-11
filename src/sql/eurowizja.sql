@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 11 Maj 2020, 21:33
+-- Czas generowania: 11 Maj 2020, 22:30
 -- Wersja serwera: 10.4.11-MariaDB
 -- Wersja PHP: 7.4.3
 
@@ -26,25 +26,20 @@ DELIMITER $$
 --
 -- Procedury
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `addArtist` (IN `new_Name` VARCHAR(20), IN `country_Name` VARCHAR(20), IN `new_Score` INT, IN `new_Song` VARCHAR(20))  BEGIN
-DECLARE ID_country_copy int;
-DECLARE ID_points_copy int;
-DECLARE ID_song_copy int;
-
-select ID_country into ID_country_copy from countries where Name=country_Name;
-select ID_points into ID_points_copy from points where Score=new_Score;
-select ID_song into ID_song_copy from songs where Name=new_Song;
-
+CREATE DEFINER=`root`@`localhost` PROCEDURE `addArtist` (IN `new_name` VARCHAR(20), IN `new_country` VARCHAR(20))  BEGIN
 INSERT INTO artists
-(Name, ID_country, ID_points, ID_song)
-VALUES
-(new_Name, ID_country_copy, ID_points_copy, ID_song_copy);
+VALUES (NULL,
+        new_name,
+        (SELECT countries.ID_country FROM countries WHERE countries.Name=new_country),
+        (SELECT points.ID_points FROM points ORDER BY points.ID_points DESC LIMIT 1),
+        (SELECT songs.ID_song FROM songs ORDER BY songs.ID_song DESC LIMIT 1));
+
+
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `deleteArtist` (IN `artist_name` VARCHAR(20))  BEGIN
 DELETE FROM artists
-WHERE Name = artist_name
-LIMIT 1;
+WHERE artists.Name = artist_name;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `randPoints` ()  BEGIN
@@ -388,13 +383,13 @@ ALTER TABLE `songs`
 -- AUTO_INCREMENT dla tabeli `artists`
 --
 ALTER TABLE `artists`
-  MODIFY `ID_artist` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `ID_artist` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT dla tabeli `countries`
 --
 ALTER TABLE `countries`
-  MODIFY `ID_country` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `ID_country` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT dla tabeli `people`
@@ -406,13 +401,13 @@ ALTER TABLE `people`
 -- AUTO_INCREMENT dla tabeli `points`
 --
 ALTER TABLE `points`
-  MODIFY `ID_points` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `ID_points` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT dla tabeli `songs`
 --
 ALTER TABLE `songs`
-  MODIFY `ID_song` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `ID_song` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Ograniczenia dla zrzutów tabel
