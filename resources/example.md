@@ -15,7 +15,7 @@ Tutaj ma znaleźć się opis projektu bazy danych. Na wstępie proszę zagnieźd
 4. Wylistowanie wszystkich wykonawców według ilości przyznanych punktów.
 5. Wylistowanie wszystkich wykonawców wraz z ich danymi.
 6. Wyświetlenie wszystkich państw i ilości uczestników dla każdego państwa.
-7. Wyświetlenie wszystkich piosenek.
+7. Uzupełnienie punktów dla każdego wykonawcy losową wartością z przedziału(0-1000)
 8. Wylistowanie wszystkich piosenek alfabetycznie.
 9. Zakualizowanie piosenki.
 10. Zakualizowanie danych osobowych.
