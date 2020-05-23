@@ -168,13 +168,13 @@ UNLOCK TABLES;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `addArtist`(IN `new_name` VARCHAR(20), IN `new_country` VARCHAR(20))
 BEGIN
-CALL randPoints(newPoint);
+CALL randPoints(new_points);
 INSERT INTO artists
 VALUES (NULL,
         new_name,
         (SELECT countries.ID_country FROM countries WHERE countries.Name=new_country),
-        (SELECT points.ID_points FROM points ORDER BY points.ID_points DESC LIMIT 1),
-        (newPoint));
+        new_points,
+        (SELECT songs.ID_song FROM songs ORDER BY songs.ID_song DESC LIMIT 1));
 
 END ;;
 DELIMITER ;
@@ -430,4 +430,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-05-23  4:09:57
+-- Dump completed on 2020-05-23 18:52:56
