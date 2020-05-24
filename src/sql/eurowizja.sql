@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 24 Maj 2020, 19:12
+-- Czas generowania: 24 Maj 2020, 19:20
 -- Wersja serwera: 10.4.11-MariaDB
 -- Wersja PHP: 7.4.6
 
@@ -158,7 +158,7 @@ DELIMITER ;
 
 CREATE TABLE `artists` (
   `ID_artist` int(11) NOT NULL,
-  `Name` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `Name` varchar(20) NOT NULL,
   `ID_country` int(11) NOT NULL,
   `ID_points` int(11) NOT NULL,
   `ID_song` int(11) NOT NULL
@@ -204,7 +204,7 @@ INSERT INTO `artists` (`ID_artist`, `Name`, `ID_country`, `ID_points`, `ID_song`
 
 CREATE TABLE `countries` (
   `ID_country` int(11) NOT NULL,
-  `Name` varchar(20) CHARACTER SET utf8 NOT NULL
+  `Name` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -247,8 +247,8 @@ INSERT INTO `countries` (`ID_country`, `Name`) VALUES
 
 CREATE TABLE `people` (
   `ID_people` int(11) NOT NULL,
-  `Name` varchar(20) CHARACTER SET utf8 NOT NULL,
-  `Surname` varchar(20) CHARACTER SET utf8 NOT NULL,
+  `Name` varchar(20) NOT NULL,
+  `Surname` varchar(20) NOT NULL,
   `ID_artist` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -331,8 +331,7 @@ INSERT INTO `points` (`ID_points`, `Score`) VALUES
 (23, 539),
 (24, 54),
 (25, 656),
-(26, 116),
-(36, -1);
+(26, 116);
 
 -- --------------------------------------------------------
 
@@ -342,8 +341,8 @@ INSERT INTO `points` (`ID_points`, `Score`) VALUES
 
 CREATE TABLE `songs` (
   `ID_song` int(11) NOT NULL,
-  `Name` varchar(20) CHARACTER SET utf8 NOT NULL,
-  `Gendre` varchar(20) CHARACTER SET utf8 NOT NULL
+  `Name` varchar(20) NOT NULL,
+  `Gendre` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -376,8 +375,7 @@ INSERT INTO `songs` (`ID_song`, `Name`, `Gendre`) VALUES
 (23, 'Kruna', 'Pop'),
 (24, 'She Got Me', 'Dance-pop'),
 (25, 'Zero Gravity', 'Pop Opera'),
-(26, 'La venda', 'Pop'),
-(36, '-1', '-1');
+(26, 'La venda', 'Pop');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -425,31 +423,31 @@ ALTER TABLE `songs`
 -- AUTO_INCREMENT dla tabeli `artists`
 --
 ALTER TABLE `artists`
-  MODIFY `ID_artist` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `ID_artist` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT dla tabeli `countries`
 --
 ALTER TABLE `countries`
-  MODIFY `ID_country` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `ID_country` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT dla tabeli `people`
 --
 ALTER TABLE `people`
-  MODIFY `ID_people` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `ID_people` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT dla tabeli `points`
 --
 ALTER TABLE `points`
-  MODIFY `ID_points` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `ID_points` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT dla tabeli `songs`
 --
 ALTER TABLE `songs`
-  MODIFY `ID_song` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `ID_song` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- Ograniczenia dla zrzutów tabel
