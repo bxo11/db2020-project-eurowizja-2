@@ -16,11 +16,11 @@ from PyQt5.QtGui import QTextCursor
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(709, 582)
+        MainWindow.resize(730, 643)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
-        self.textEdit.setGeometry(QtCore.QRect(10, 10, 501, 531))
+        self.textEdit.setGeometry(QtCore.QRect(10, 10, 501, 581))
         self.textEdit.setObjectName("textEdit")
         self.radioButtonAll = QtWidgets.QRadioButton(self.centralwidget)
         self.radioButtonAll.setGeometry(QtCore.QRect(520, 10, 100, 20))
@@ -41,77 +41,93 @@ class Ui_MainWindow(object):
         self.radioButtonSongsG.setGeometry(QtCore.QRect(520, 160, 121, 20))
         self.radioButtonSongsG.setObjectName("radioButtonSongsG")
         self.readButton = QtWidgets.QPushButton(self.centralwidget)
-        self.readButton.setGeometry(QtCore.QRect(600, 80, 113, 32))
+        self.readButton.setGeometry(QtCore.QRect(610, 80, 113, 32))
         self.readButton.setObjectName("readButton")
         self.lineEditArtist = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEditArtist.setGeometry(QtCore.QRect(550, 200, 113, 21))
+        self.lineEditArtist.setGeometry(QtCore.QRect(570, 200, 113, 21))
         self.lineEditArtist.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEditArtist.setObjectName("lineEditArtist")
-        self.addButton = QtWidgets.QPushButton(self.centralwidget)
-        self.addButton.setGeometry(QtCore.QRect(550, 220, 113, 32))
-        self.addButton.setObjectName("addButton")
-        self.deleteButton = QtWidgets.QPushButton(self.centralwidget)
-        self.deleteButton.setGeometry(QtCore.QRect(550, 250, 113, 32))
-        self.deleteButton.setObjectName("deleteButton")
+        self.addArtistButton = QtWidgets.QPushButton(self.centralwidget)
+        self.addArtistButton.setGeometry(QtCore.QRect(510, 220, 113, 32))
+        self.addArtistButton.setObjectName("addArtistButton")
+        self.deleteArtistButton = QtWidgets.QPushButton(self.centralwidget)
+        self.deleteArtistButton.setGeometry(QtCore.QRect(620, 220, 113, 32))
+        self.deleteArtistButton.setObjectName("deleteArtistButton")
         self.lineEditCountry = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEditCountry.setGeometry(QtCore.QRect(550, 280, 113, 21))
+        self.lineEditCountry.setGeometry(QtCore.QRect(570, 250, 113, 21))
         self.lineEditCountry.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEditCountry.setObjectName("lineEditCountry")
         self.lineEditPoints = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEditPoints.setGeometry(QtCore.QRect(550, 310, 113, 21))
+        self.lineEditPoints.setGeometry(QtCore.QRect(570, 300, 113, 21))
         self.lineEditPoints.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEditPoints.setObjectName("lineEditPoints")
         self.pointsButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pointsButton.setGeometry(QtCore.QRect(550, 330, 113, 32))
+        self.pointsButton.setGeometry(QtCore.QRect(570, 320, 113, 32))
         self.pointsButton.setObjectName("pointsButton")
         self.lineEditSongName = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEditSongName.setGeometry(QtCore.QRect(550, 360, 113, 21))
+        self.lineEditSongName.setGeometry(QtCore.QRect(570, 360, 113, 21))
         self.lineEditSongName.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEditSongName.setObjectName("lineEditSongName")
         self.lineEditGendre = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEditGendre.setGeometry(QtCore.QRect(550, 390, 113, 21))
+        self.lineEditGendre.setGeometry(QtCore.QRect(570, 390, 113, 21))
         self.lineEditGendre.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEditGendre.setObjectName("lineEditGendre")
         self.songButton = QtWidgets.QPushButton(self.centralwidget)
-        self.songButton.setGeometry(QtCore.QRect(550, 410, 113, 32))
+        self.songButton.setGeometry(QtCore.QRect(570, 410, 113, 32))
         self.songButton.setObjectName("songButton")
         self.lineEditOldName = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEditOldName.setGeometry(QtCore.QRect(520, 450, 81, 21))
+        self.lineEditOldName.setGeometry(QtCore.QRect(520, 450, 91, 21))
         self.lineEditOldName.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEditOldName.setObjectName("lineEditOldName")
         self.lineEditOldSurname = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEditOldSurname.setGeometry(QtCore.QRect(610, 450, 91, 21))
+        self.lineEditOldSurname.setGeometry(QtCore.QRect(630, 450, 91, 21))
         self.lineEditOldSurname.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEditOldSurname.setObjectName("lineEditOldSurname")
         self.lineEditNewName = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEditNewName.setGeometry(QtCore.QRect(520, 480, 81, 21))
+        self.lineEditNewName.setGeometry(QtCore.QRect(520, 480, 91, 21))
         self.lineEditNewName.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEditNewName.setObjectName("lineEditNewName")
         self.lineEditNewSurmane = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEditNewSurmane.setGeometry(QtCore.QRect(610, 480, 91, 21))
+        self.lineEditNewSurmane.setGeometry(QtCore.QRect(630, 480, 91, 21))
         self.lineEditNewSurmane.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEditNewSurmane.setObjectName("lineEditNewSurmane")
         self.peopleDataButton = QtWidgets.QPushButton(self.centralwidget)
-        self.peopleDataButton.setGeometry(QtCore.QRect(550, 500, 113, 32))
+        self.peopleDataButton.setGeometry(QtCore.QRect(570, 500, 113, 32))
         self.peopleDataButton.setObjectName("peopleDataButton")
+        self.addPersonButton = QtWidgets.QPushButton(self.centralwidget)
+        self.addPersonButton.setGeometry(QtCore.QRect(510, 530, 113, 32))
+        self.addPersonButton.setObjectName("addPersonButton")
+        self.deletePersonButton = QtWidgets.QPushButton(self.centralwidget)
+        self.deletePersonButton.setGeometry(QtCore.QRect(620, 530, 113, 32))
+        self.deletePersonButton.setObjectName("deletePersonButton")
+        self.addCountryButton = QtWidgets.QPushButton(self.centralwidget)
+        self.addCountryButton.setGeometry(QtCore.QRect(510, 270, 113, 32))
+        self.addCountryButton.setObjectName("addCountryButton")
+        self.deleteCountryButton = QtWidgets.QPushButton(self.centralwidget)
+        self.deleteCountryButton.setGeometry(QtCore.QRect(620, 270, 113, 32))
+        self.deleteCountryButton.setObjectName("deleteCountryButton")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 709, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 730, 22))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
-        
+
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         
         self.readButton.clicked.connect(lambda:self.readButtonFun())
-        self.addButton.clicked.connect(lambda:self.addButtonFun())
-        self.deleteButton.clicked.connect(lambda:self.deleteButtonFun())
+        self.addArtistButton.clicked.connect(lambda:self.addArtistButtonFun())
+        self.deleteArtistButton.clicked.connect(lambda:self.deleteArtistButtonFun())
+        self.addCountryButton.clicked.connect(lambda:self.addCountryButtonFun())
+        self.deleteCountryButton.clicked.connect(lambda:self.deleteCountryButtonFun())
         self.pointsButton.clicked.connect(lambda:self.pointsButtonFun())
         self.songButton.clicked.connect(lambda:self.songButtonFun())
         self.peopleDataButton.clicked.connect(lambda:self.peopleDataButtonFun())
+        self.addPersonButton.clicked.connect(lambda:self.addPersonButtonFun())
+        self.deletePersonButton.clicked.connect(lambda:self.deletePersonButtonFun())
         
         
     def retranslateUi(self, MainWindow):
@@ -125,8 +141,8 @@ class Ui_MainWindow(object):
         self.radioButtonSongsG.setText(_translate("MainWindow", "Songs\' gendres"))
         self.readButton.setText(_translate("MainWindow", "Read"))
         self.lineEditArtist.setText(_translate("MainWindow", "Artist\' name"))
-        self.addButton.setText(_translate("MainWindow", "Add artist"))
-        self.deleteButton.setText(_translate("MainWindow", "Delete artist"))
+        self.addArtistButton.setText(_translate("MainWindow", "Add artist"))
+        self.deleteArtistButton.setText(_translate("MainWindow", "Delete artist"))
         self.lineEditCountry.setText(_translate("MainWindow", "Country"))
         self.lineEditPoints.setText(_translate("MainWindow", "Points"))
         self.pointsButton.setText(_translate("MainWindow", "Update points"))
@@ -138,6 +154,10 @@ class Ui_MainWindow(object):
         self.lineEditNewName.setText(_translate("MainWindow", "New name"))
         self.lineEditNewSurmane.setText(_translate("MainWindow", "New surname"))
         self.peopleDataButton.setText(_translate("MainWindow", "Update data"))
+        self.addPersonButton.setText(_translate("MainWindow", "Add person"))
+        self.deletePersonButton.setText(_translate("MainWindow", "Delete person"))
+        self.addCountryButton.setText(_translate("MainWindow", "Add country"))
+        self.deleteCountryButton.setText(_translate("MainWindow", "Delete country"))
     
     
     
@@ -202,7 +222,7 @@ class Ui_MainWindow(object):
         
         
         
-    def addButtonFun(self):
+    def addArtistButtonFun(self):
         self.textEdit.clear()
         name = str(self.lineEditArtist.text())
         country = str(self.lineEditCountry.text())
@@ -211,11 +231,27 @@ class Ui_MainWindow(object):
         api.execute(query)
         
         
-    def deleteButtonFun(self):
+    def deleteArtistButtonFun(self):
         self.textEdit.clear()
         name = str(self.lineEditArtist.text())
         
         query = "CALL deleteArtist('{}')".format(name)
+        api.execute(query)
+        
+        
+    def addCountryButtonFun(self):
+        self.textEdit.clear()
+        country = str(self.lineEditCountry.text())
+        
+        query = "CALL addCountry('{}')".format(country)
+        api.execute(query)
+        
+        
+    def deleteCountryButtonFun(self):
+        self.textEdit.clear()
+        country = str(self.lineEditCountry.text())
+        
+        query = "CALL deleteCountry('{}')".format(country)
         api.execute(query)
         
         
@@ -247,7 +283,25 @@ class Ui_MainWindow(object):
         
         query = "CALL updatePeopleData('Michela', 'Pace','Miche', 'Pac')".format(old_name, old_surname, new_name, new_surname)
         api.execute(query)
-    
+        
+    def addPersonButtonFun(self):
+        self.textEdit.clear()
+        name = str(self.lineEditNewName.text())
+        surname = str(self.lineEditNewSurname.text())
+        artist = str(self.lineEditArtist.text())
+        
+        query = "CALL addPerson('{}', '{}', '{}')".format(name, surname, artist)
+        api.execute(query)
+        
+        
+    def deletePersonButtonFun(self):
+        self.textEdit.clear()
+        name = str(self.lineEditNewName.text())
+        surname = str(self.lineEditNewSurname.text())
+        
+        query = "CALL deletePerson('{}')".format(name, surname)
+        api.execute(query)
+
 
 
 
