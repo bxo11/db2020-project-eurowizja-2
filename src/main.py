@@ -167,7 +167,7 @@ class Ui_MainWindow(object):
             dictio = api.execute("CALL readBestTrio()")
             
             for i, elem in enumerate(dictio):
-                text += str(i+1) +'. '+ elem['Name'] +' '+ str(elem['Score']) + '\n'
+                text += str(i+1) + '. {:<25}'.format(elem['Name']) + str(elem['Score']) + '\n'
             
             self.textEdit.insertPlainText(text)
             self.textEdit.moveCursor(QTextCursor.End)
@@ -186,7 +186,7 @@ class Ui_MainWindow(object):
             dictio = api.execute("CALL readCountries()")
             
             for i, elem in enumerate(dictio):
-                text += str(i+1) +'. '+ elem['Name'] +' '+ str(elem['Ilosc_uczestnikow']) + '\n'
+                text += str(i+1) + '. {:<25}'.format(elem['Name']) + str(elem['Ilosc_uczestnikow']) + '\n'
             
             self.textEdit.insertPlainText(text)
             self.textEdit.moveCursor(QTextCursor.End)
@@ -195,7 +195,7 @@ class Ui_MainWindow(object):
             dictio = api.execute("CALL readSongs()")
             
             for i, elem in enumerate(dictio):
-                text += str(i+1) +'. '+ elem['Gendre'] +' '+ str(elem['ilosc_piosenek']) + '\n'
+                text += str(i+1) + '. {:<18}'.format(elem['Gendre']) + str(elem['ilosc_piosenek']) + '\n'
             
             self.textEdit.insertPlainText(text)
             self.textEdit.moveCursor(QTextCursor.End)
