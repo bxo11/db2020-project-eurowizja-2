@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 24 Maj 2020, 18:32
+-- Czas generowania: 24 Maj 2020, 19:12
 -- Wersja serwera: 10.4.11-MariaDB
 -- Wersja PHP: 7.4.6
 
@@ -39,6 +39,19 @@ VALUES (NULL,
 
 END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `addCountry` (IN `new_country` VARCHAR(20))  NO SQL
+BEGIN
+INSERT INTO countries
+VALUES(NULL,new_country);
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `addPerson` (IN `person_name` VARCHAR(20), IN `person_surname` VARCHAR(20), IN `person_art` VARCHAR(20))  NO SQL
+BEGIN
+INSERT INTO people
+VALUES(NULL,person_name,person_surname,
+      (SELECT artists.ID_artist FROM artists WHERE artists.Name = person_art ));
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `deleteArtist` (IN `artist_name` VARCHAR(20))  BEGIN
 DECLARE song_id_rm INT;
 DECLARE points_id_rm INT;
@@ -55,6 +68,18 @@ WHERE songs.ID_song = song_id_rm;
 
 DELETE FROM points
 WHERE points.ID_points = points_id_rm;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `deleteCountry` (IN `country_name` VARCHAR(20))  NO SQL
+BEGIN
+DELETE FROM countries
+WHERE countries.Name = country_name;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `deletePerson` (IN `name_to_del` VARCHAR(20), IN `sur_to_del` VARCHAR(20))  NO SQL
+BEGIN
+DELETE FROM people
+WHERE people.Name = name_to_del AND people.Surname = sur_to_del;
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `randPoints` ()  BEGIN
@@ -306,7 +331,8 @@ INSERT INTO `points` (`ID_points`, `Score`) VALUES
 (23, 539),
 (24, 54),
 (25, 656),
-(26, 116);
+(26, 116),
+(36, -1);
 
 -- --------------------------------------------------------
 
@@ -350,7 +376,8 @@ INSERT INTO `songs` (`ID_song`, `Name`, `Gendre`) VALUES
 (23, 'Kruna', 'Pop'),
 (24, 'She Got Me', 'Dance-pop'),
 (25, 'Zero Gravity', 'Pop Opera'),
-(26, 'La venda', 'Pop');
+(26, 'La venda', 'Pop'),
+(36, '-1', '-1');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -398,31 +425,31 @@ ALTER TABLE `songs`
 -- AUTO_INCREMENT dla tabeli `artists`
 --
 ALTER TABLE `artists`
-  MODIFY `ID_artist` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `ID_artist` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT dla tabeli `countries`
 --
 ALTER TABLE `countries`
-  MODIFY `ID_country` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `ID_country` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT dla tabeli `people`
 --
 ALTER TABLE `people`
-  MODIFY `ID_people` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `ID_people` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT dla tabeli `points`
 --
 ALTER TABLE `points`
-  MODIFY `ID_points` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `ID_points` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT dla tabeli `songs`
 --
 ALTER TABLE `songs`
-  MODIFY `ID_song` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `ID_song` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- Ograniczenia dla zrzutów tabel
