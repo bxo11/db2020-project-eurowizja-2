@@ -9,7 +9,8 @@ def execute(SQL_string):
         user = 'root',
         db   = 'eurowizja',
         charset     = 'utf8mb4',
-        cursorclass = pymysql.cursors.DictCursor
+        cursorclass = pymysql.cursors.DictCursor,
+        autocommit = True
     )
     result = None
     
