@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 24 Maj 2020, 19:20
+-- Czas generowania: 25 Maj 2020, 10:59
 -- Wersja serwera: 10.4.11-MariaDB
 -- Wersja PHP: 7.4.6
 
@@ -282,13 +282,13 @@ INSERT INTO `people` (`ID_people`, `Name`, `Surname`, `ID_artist`) VALUES
 (23, 'Einar', 'Stefánsson', 17),
 (24, 'Victor', 'Crone', 18),
 (25, 'Zinaida', 'Kuprianowicz ', 19),
-(27, 'Chingiz', 'Mustafayev', 20),
-(28, 'Bilal', 'Hassani', 21),
-(29, 'Alessandro', 'Mahmoud', 22),
-(30, 'Nevena', 'Božović', 23),
-(31, 'Luca', 'Hänni', 24),
-(32, 'Kate', 'Miller-Heidke', 25),
-(33, 'Miguel', 'Pozo', 26);
+(26, 'Chingiz', 'Mustafayev', 20),
+(27, 'Bilal', 'Hassani', 21),
+(28, 'Alessandro', 'Mahmoud', 22),
+(29, 'Nevena', 'Božović', 23),
+(30, 'Luca', 'Hänni', 24),
+(31, 'Kate', 'Miller-Heidke', 25),
+(32, 'Miguel', 'Pozo', 26);
 
 -- --------------------------------------------------------
 
@@ -331,7 +331,7 @@ INSERT INTO `points` (`ID_points`, `Score`) VALUES
 (23, 539),
 (24, 54),
 (25, 656),
-(26, 116);
+(26, -100);
 
 -- --------------------------------------------------------
 
@@ -423,31 +423,31 @@ ALTER TABLE `songs`
 -- AUTO_INCREMENT dla tabeli `artists`
 --
 ALTER TABLE `artists`
-  MODIFY `ID_artist` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `ID_artist` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT dla tabeli `countries`
 --
 ALTER TABLE `countries`
-  MODIFY `ID_country` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `ID_country` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT dla tabeli `people`
 --
 ALTER TABLE `people`
-  MODIFY `ID_people` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `ID_people` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT dla tabeli `points`
 --
 ALTER TABLE `points`
-  MODIFY `ID_points` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `ID_points` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT dla tabeli `songs`
 --
 ALTER TABLE `songs`
-  MODIFY `ID_song` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `ID_song` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- Ograniczenia dla zrzutów tabel
