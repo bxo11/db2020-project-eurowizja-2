@@ -1,3 +1,4 @@
+
 # Eurowizja.
 
 | Nazwisko i imię | Wydział | Kierunek | Semestr | Grupa | Rok akademicki |
@@ -7,6 +8,62 @@
 
 ## Projekt bazy danych
 ![enter image description here](https://raw.githubusercontent.com/phajder-databases/db2020-project-eurowizja-2/master/resources/eurowizja%20-%20diagram.png)
+
+**1. Tabela *countries*:**
+
+      create table countries:
+        (  
+            ID_country int auto_increment  
+         primary key, Name       varchar(20) charset utf8 not null  
+        )
+
+**2. Tabela *points*:**
+
+    create table points:
+    (  
+        ID_points int auto_increment  
+     primary key,  Score     int not null  
+    )
+
+            
+**3. Tabela *songs*:**
+
+       create table songs  
+    (  
+        ID_song int auto_increment  
+     primary key, Name    varchar(20) charset utf8 not null,  
+      Gendre  varchar(20) charset utf8 not null  
+    )
+
+**4. Tabela *artists*:** 
+  
+
+     create table artists  
+    (  
+        ID_artist  int auto_increment  
+     primary key, Name       varchar(20) charset utf8 not null,  
+      ID_country int                      not null,  
+      ID_points  int                      not null,  
+      ID_song    int                      not null,  
+     constraint Artist_ibfk_1  
+            foreign key (ID_country) references countries (ID_country),  
+     constraint Artist_ibfk_2  
+            foreign key (ID_points) references points (ID_points),  
+     constraint Artist_ibfk_3  
+            foreign key (ID_song) references songs (ID_song)  
+    )
+
+**5. Tabela *people*:**
+
+    create table people  
+    (  
+        ID_people int auto_increment  
+     primary key, Name      varchar(20) charset utf8 not null,  
+      Surname   varchar(20) charset utf8 not null,  
+      ID_artist int                      not null,  
+     constraint People_ibfk_1  
+            foreign key (ID_artist) references artists (ID_artist)  
+    )
 
 Tutaj ma znaleźć się opis projektu bazy danych. Na wstępie proszę zagnieździć obraz schematu w formie wektorowej, najlepiej plik SVG. Dodatkowo, w tej sekcji należy zawrzeć kilka przykładowych zapytań tworzących (lub w razie konieczności, modyfikujących) tabelę, tj. grupa DDL.
 
@@ -133,4 +190,5 @@ Tutaj należy opisać aplikację, która wykorzystuje zapytania SQL z poprzednie
 
 ## Dodatkowe uwagi
 W tej sekcji możecie zawrzeć informacje, których nie jesteście w stanie przypisać do pozostałych. Mogą to być również jakieś komentarze, wolne uwagi, itp.
+
 
