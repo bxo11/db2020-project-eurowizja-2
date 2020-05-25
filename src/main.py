@@ -87,10 +87,10 @@ class Ui_MainWindow(object):
         self.lineEditNewName.setGeometry(QtCore.QRect(520, 480, 91, 21))
         self.lineEditNewName.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEditNewName.setObjectName("lineEditNewName")
-        self.lineEditNewSurmane = QtWidgets.QLineEdit(self.centralwidget)
-        self.lineEditNewSurmane.setGeometry(QtCore.QRect(630, 480, 91, 21))
-        self.lineEditNewSurmane.setAlignment(QtCore.Qt.AlignCenter)
-        self.lineEditNewSurmane.setObjectName("lineEditNewSurmane")
+        self.lineEditNewSurname = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEditNewSurname.setGeometry(QtCore.QRect(630, 480, 91, 21))
+        self.lineEditNewSurname.setAlignment(QtCore.Qt.AlignCenter)
+        self.lineEditNewSurname.setObjectName("lineEditNewSurname")
         self.peopleDataButton = QtWidgets.QPushButton(self.centralwidget)
         self.peopleDataButton.setGeometry(QtCore.QRect(570, 500, 113, 32))
         self.peopleDataButton.setObjectName("peopleDataButton")
@@ -152,7 +152,7 @@ class Ui_MainWindow(object):
         self.lineEditOldName.setText(_translate("MainWindow", "Old name"))
         self.lineEditOldSurname.setText(_translate("MainWindow", "Old surname"))
         self.lineEditNewName.setText(_translate("MainWindow", "New name"))
-        self.lineEditNewSurmane.setText(_translate("MainWindow", "New surname"))
+        self.lineEditNewSurname.setText(_translate("MainWindow", "New surname"))
         self.peopleDataButton.setText(_translate("MainWindow", "Update data"))
         self.addPersonButton.setText(_translate("MainWindow", "Add person"))
         self.deletePersonButton.setText(_translate("MainWindow", "Delete person"))
@@ -170,7 +170,7 @@ class Ui_MainWindow(object):
             dictio = api.execute("CALL readEveryone()")
             
             for i, elem in enumerate(dictio):
-                text += str(i+1) +'. {:<33}'.format(elem['Name'] +' '+ elem['people.Name'] +' '+ elem['Surname']) + elem['songs.Name'] +' '+ elem['Gendre'] +' '+ elem['countries.Name'] + '\n'
+                text += str(i+1) +'. {:<33}'.format(elem['Name'] +' - '+ elem['people.Name'] +' - '+ elem['Surname']) +' |'+ elem['songs.Name'] +' - '+ elem['Gendre'] +' - '+ elem['countries.Name'] + '\n'
             
             self.textEdit.insertPlainText(text)
             self.textEdit.moveCursor(QTextCursor.End)
@@ -281,7 +281,7 @@ class Ui_MainWindow(object):
         new_name = str(self.lineEditNewName.text())
         new_surname = str(self.lineEditNewSurname.text())
         
-        query = "CALL updatePeopleData('Michela', 'Pace','Miche', 'Pac')".format(old_name, old_surname, new_name, new_surname)
+        query = "CALL updatePeopleData('{}', '{}', '{}','{}')".format(old_name, old_surname, new_name, new_surname)
         api.execute(query)
         
     def addPersonButtonFun(self):
@@ -299,7 +299,7 @@ class Ui_MainWindow(object):
         name = str(self.lineEditNewName.text())
         surname = str(self.lineEditNewSurname.text())
         
-        query = "CALL deletePerson('{}')".format(name, surname)
+        query = "CALL deletePerson('{}','{}')".format(name, surname)
         api.execute(query)
 
 
