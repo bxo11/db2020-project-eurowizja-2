@@ -9,18 +9,31 @@
 Tutaj ma znaleźć się opis projektu bazy danych. Na wstępie proszę zagnieździć obraz schematu w formie wektorowej, najlepiej plik SVG. Dodatkowo, w tej sekcji należy zawrzeć kilka przykładowych zapytań tworzących (lub w razie konieczności, modyfikujących) tabelę, tj. grupa DDL.
 
 ## Implementacja zapytań SQL
-1. Dodanie wykonawcy/zespołu.
-2. Wyświetlenie zwycięscy wraz z danymi.
-3. Wyświetlenie zwycięskiej trójki.
-4. Wylistowanie wszystkich wykonawców według ilości przyznanych punktów.
-5. Wylistowanie wszystkich wykonawców wraz z ich danymi.
-6. Wyświetlenie wszystkich państw i ilości uczestników dla każdego państwa.
-7. Uzupełnienie punktów dla każdego wykonawcy losową wartością z przedziału(0-1000)
-8. Wylistowanie gatunów piosenek razem z liczbą wystąpień.
-9. Zakualizowanie piosenki.
-10. Zakualizowanie danych osobowych.
-11. Zakualizowanie ilości punktów uczestnika.
-12. Usunięcie uczestnika.
+
+**1. Wyświetlenie zwycięscy wraz z danymi:**
+SELECT artists.Name 
+from (points INNER JOIN artists on artists.ID_points = points.ID_points)
+order by points.Score DESC limit 1;
+**2. Wyświetlenie zwycięskiej trójki:**
+SELECT artists.Name, points.Score
+from (points
+INNER JOIN artists on artists.ID_points = points.ID_points)
+order by points.Score DESC limit 3;
+**3. Wylistowanie wszystkich wykonawców według ilości przyznanych punktów:**
+**4. Wylistowanie wszystkich wykonawców wraz z ich danymi:**
+**5. Wyświetlenie wszystkich państw i ilości uczestników dla każdego państwa:**
+**6. Wylistowanie gatunów piosenek razem z liczbą wystąpień:**
+**7. Dodanie wykonawcy/zespołu:**
+**8. Dodanie państwa:**
+**9. Dodanie pojedyńczej osoby:**
+**10. Zaktualizowanie nazwy i gatunku piosenki:**
+**11. Zaktualizowanie danych osobowych:**
+**12. Zaktualizowanie ilości punktów uczestnika:**
+**13. Usunięcie wykonawcy/zespołu:**
+**14. Usunięcie państwa:**
+**15. Usunięcie pojedyńczej osoby:**
+
+**16. Uzupełnienie punktów dla każdego wykonawcy losową wartością z przedziału(0-1000):**
 
 Tutaj należy wylistować wszystkie funkcjonalności, wraz z odpowiednimi zapytaniami SQL. W tej sekcji należy zawrzeć wyłącznie zapytania z grupy DML oraz DQL.
 
