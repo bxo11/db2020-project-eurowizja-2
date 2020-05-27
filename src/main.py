@@ -16,7 +16,7 @@ from PyQt5.QtGui import QTextCursor
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(730, 643)
+        MainWindow.resize(730, 633)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
@@ -132,7 +132,7 @@ class Ui_MainWindow(object):
         
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "App"))
         self.radioButtonAll.setText(_translate("MainWindow", "Everyone"))
         self.radioButtonWinner.setText(_translate("MainWindow", "Winner"))
         self.radioButtonTrio.setText(_translate("MainWindow", "Best Trio"))
