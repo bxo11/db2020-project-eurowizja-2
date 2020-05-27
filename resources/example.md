@@ -208,11 +208,13 @@ Instrukcja stosowania poleceń do bazy (przyciski):
 
 W celu poprawnej odpalenia aplikacji należy uprzednio pobrać paliety dzięki wywołaniu w terminalu poleceń: 
 
-- dla Windows : python -m pip install pymysql
+- dla Windows : 
+                python -m pip install pymysql
 
                 python -m pip install pyqt5
 
-- dla Linux/MacOs : pip3 install pymysql
+- dla Linux/MacOs : 
+                    pip3 install pymysql
 
                     pip3 install pyqt5
 
