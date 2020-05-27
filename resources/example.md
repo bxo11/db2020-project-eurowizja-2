@@ -183,12 +183,37 @@ Tutaj ma znaleźć się opis projektu bazy danych. Na wstępie proszę zagnieźd
 
     UPDATE points SET points.Score = FLOOR(RAND() * (1000 + 1));
 
-Tutaj należy wylistować wszystkie funkcjonalności, wraz z odpowiednimi zapytaniami SQL. W tej sekcji należy zawrzeć wyłącznie zapytania z grupy DML oraz DQL.
 
 ## Aplikacja
-Tutaj należy opisać aplikację, która wykorzystuje zapytania SQL z poprzedniego kroku. Można, jednak nie jest to konieczne, wrzucić tutaj istotne snippety z Waszych aplikacji.
+
+Aplikacja została stworzona z wykorzystaniem framework'u pyQt do tworzenia aplikacji okienkowych.
+
+![enter image description here](https://raw.github.com/phajder-databases/db2020-project-eurowizja-2/blob/master/resources/eurowizja-aplikacja.png)
+
+Aplikacja w wyznaczonym okienku wypisuje wyniki działania funkcjonalności, zgodnie z tym jaki wybrało się przycisk typu radio button, i po przysiśnięciu przycisku Read. Pozostałe przyciski i linie pobierające dane służą zarządzaniu samą bazą, bez wypisywania komunikatow.
+
+Instrukcja stosowania poleceń do bazy (przyciski):
+- Add artist: wypełnić: 'Artist's name' + 'Country',
+- Delete artist: wypełnić: 'Artist's name',
+- Add country: wypełnić: 'Country',
+- Delete country: wypełnić: 'Country',
+- Update points: wypełnić: 'Points',
+- Update song: wypełnić: 'Song name',
+- Update data: wypełnić: 'Old name', 'Old surname', 'New name', 'New surname',
+- Add person: wypełnić: 'New name', 'New surname', 'Artist's name,
+- Delete person: wypełnić: 'New name', 'New surname'.
+
 
 ## Dodatkowe uwagi
-W tej sekcji możecie zawrzeć informacje, których nie jesteście w stanie przypisać do pozostałych. Mogą to być również jakieś komentarze, wolne uwagi, itp.
+
+W celu poprawnej odpalenia aplikacji należy uprzednio pobrać paliety dzięki wywołaniu w terminalu poleceń: 
+
+- dla Windows : python -m pip install pymysql
+                python -m pip install pyqt5
+
+- dla Linux/MacOs : pip3 install pymysql
+                    pip3 install pyqt5
+
+By uruchomic aplikację w terminalu należy przenieść się do katalogu lokalizacji pliku main.py i odpalić go za pomocą komendy: python3 main.py i korzystać z możliwości jakie daje nasza aplikacja.
 
 
