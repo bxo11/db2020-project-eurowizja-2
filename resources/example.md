@@ -209,9 +209,11 @@ Instrukcja stosowania poleceń do bazy (przyciski):
 W celu poprawnej odpalenia aplikacji należy uprzednio pobrać paliety dzięki wywołaniu w terminalu poleceń: 
 
 - dla Windows : python -m pip install pymysql
+
                 python -m pip install pyqt5
 
 - dla Linux/MacOs : pip3 install pymysql
+
                     pip3 install pyqt5
 
 By uruchomic aplikację w terminalu należy przenieść się do katalogu lokalizacji pliku main.py i odpalić go za pomocą komendy: python3 main.py i korzystać z możliwości jakie daje nasza aplikacja.
