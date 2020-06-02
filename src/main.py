@@ -229,6 +229,7 @@ class Ui_MainWindow(object):
         
         query = "CALL addArtist('{}', '{}')".format(name, country)
         api.execute(query)
+        api.execute("CALL randPoints()")
         
         
     def deleteArtistButtonFun(self):
