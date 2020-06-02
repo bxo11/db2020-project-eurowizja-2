@@ -1,4 +1,5 @@
 
+
 # Eurowizja.
 
 | Nazwisko i imię | Wydział | Kierunek | Semestr | Grupa | Rok akademicki |
@@ -11,37 +12,37 @@
 
 **1. Tabela *countries*:**
 
-      create table countries:
-        (  
-            ID_country int auto_increment  
-         primary key, Name       varchar(20) charset utf8 not null  
-        )
+    create table countries:
+    (  
+      ID_country int auto_increment primary key,
+      Name       varchar(20) charset utf8 not null  
+    )
 
 **2. Tabela *points*:**
 
     create table points:
     (  
-        ID_points int auto_increment  
-     primary key,  Score     int not null  
+      ID_points int auto_increment primary key,
+      Score     int not null  
     )
 
             
 **3. Tabela *songs*:**
 
-       create table songs  
+    create table songs  
     (  
-        ID_song int auto_increment  
-     primary key, Name    varchar(20) charset utf8 not null,  
+      ID_song int auto_increment  primary key,
+      Name    varchar(20) charset utf8 not null,  
       Gendre  varchar(20) charset utf8 not null  
     )
 
 **4. Tabela *artists*:** 
   
 
-     create table artists  
+    create table artists  
     (  
-        ID_artist  int auto_increment  
-     primary key, Name       varchar(20) charset utf8 not null,  
+      ID_artist  int auto_increment primary key, 
+      Name       varchar(20) charset utf8 not null,  
       ID_country int                      not null,  
       ID_points  int                      not null,  
       ID_song    int                      not null,  
@@ -57,29 +58,28 @@
 
     create table people  
     (  
-        ID_people int auto_increment  
-     primary key, Name      varchar(20) charset utf8 not null,  
+      ID_people int auto_increment primary key, 
+      Name      varchar(20) charset utf8 not null,  
       Surname   varchar(20) charset utf8 not null,  
       ID_artist int                      not null,  
      constraint People_ibfk_1  
             foreign key (ID_artist) references artists (ID_artist)  
     )
 
-Tutaj ma znaleźć się opis projektu bazy danych. Na wstępie proszę zagnieździć obraz schematu w formie wektorowej, najlepiej plik SVG. Dodatkowo, w tej sekcji należy zawrzeć kilka przykładowych zapytań tworzących (lub w razie konieczności, modyfikujących) tabelę, tj. grupa DDL.
 
 ## Implementacja zapytań SQL
 
 **1. Wyświetlenie zwycięscy wraz z danymi:**
 
     SELECT artists.Name 
-    from (points INNER JOIN artists on artists.ID_points = points.ID_points)
-    order by points.Score DESC limit 1;
+    FROM (points INNER JOIN artists ON artists.ID_points = points.ID_points)
+    ORDER BY points.Score DESC limit 1;
 
 **2. Wyświetlenie zwycięskiej trójki:**
 
     SELECT artists.Name, points.Score
-    from (points INNER JOIN artists on artists.ID_points = points.ID_points)
-    order by points.Score DESC limit 3;
+    FROM (points INNER JOIN artists ON artists.ID_points = points.ID_points)
+    ORDER BY points.Score DESC limit 3;
 
 **3. Wylistowanie wszystkich wykonawców według ilości przyznanych punktów:**
 
@@ -157,8 +157,8 @@ Tutaj ma znaleźć się opis projektu bazy danych. Na wstępie proszę zagnieźd
     DECLARE song_id_rm INT;
     DECLARE points_id_rm INT;
     
-    set song_id_rm = (Select artists.ID_song from artists Where artists.Name = artist_name);
-    set points_id_rm = (Select artists.ID_points from artists Where artists.Name = artist_name);
+    SET song_id_rm = (SELECT artists.ID_song FROM artists WHERE artists.Name = artist_name);
+    SET points_id_rm = (SELECT artists.ID_points FROM artists WHERE artists.Name = artist_name);
     
     DELETE FROM artists
     WHERE artists.Name = artist_name;
@@ -179,7 +179,7 @@ Tutaj ma znaleźć się opis projektu bazy danych. Na wstępie proszę zagnieźd
     DELETE FROM people
     WHERE people.Name = name_to_del AND people.Surname = sur_to_del;
 
-**16. Uzupełnienie punktów dla każdego wykonawcy losową wartością z przedziału(0-1000):**
+**16. Uzupełnienie punktów dla każdego wykonawcy losową wartością z przedziału(0-1000) po dodaniu nowego wykonawcy:**
 
     UPDATE points SET points.Score = FLOOR(RAND() * (1000 + 1));
 
