@@ -117,21 +117,21 @@
     
     INSERT INTO artists
     VALUES (NULL,
-            new_name,
-            (SELECT countries.ID_country FROM countries WHERE countries.Name=new_country),
-            (SELECT points.ID_points FROM points ORDER BY points.ID_points DESC LIMIT 1),
-            (SELECT songs.ID_song FROM songs ORDER BY songs.ID_song DESC LIMIT 1));
+           new_name,
+           (SELECT countries.ID_country FROM countries WHERE countries.Name=new_country),
+           (SELECT points.ID_points FROM points ORDER BY points.ID_points DESC LIMIT 1),
+           (SELECT songs.ID_song FROM songs ORDER BY songs.ID_song DESC LIMIT 1));
 
 **8. Dodanie państwa:**
 
     INSERT INTO countries
-    VALUES(NULL,new_country);
+    VALUES (NULL,new_country);
 
 **9. Dodanie pojedyńczej osoby:**
 
     INSERT INTO people
-    VALUES(NULL,person_name,person_surname,
-          (SELECT artists.ID_artist FROM artists WHERE artists.Name = person_art ));
+    VALUES (NULL,person_name,person_surname,
+           (SELECT artists.ID_artist FROM artists WHERE artists.Name = person_art ));
 
 **10. Zaktualizowanie nazwy i gatunku piosenki:**
 
