@@ -8,7 +8,7 @@
 | Krzysztof Klimczyk        | WIMiIP  | IS       |   4     | 3     | 2019/2020      |
 
 ## Projekt bazy danych
-![enter image description here](https://raw.githubusercontent.com/phajder-databases/db2020-project-eurowizja-2/master/resources/eurowizja%20-%20diagram.png)
+![enter image description here](https://github.com/KrzysiekJa/db2020-project-eurowizja-2/blob/master/resources/eurowizja%20-%20diagram.png)
 
 **1. Tabela *countries*:**
 
@@ -188,7 +188,7 @@
 
 Aplikacja została stworzona z wykorzystaniem framework'u pyQt do tworzenia aplikacji okienkowych.
 
-![enter image description here](https://raw.githubusercontent.com/phajder-databases/db2020-project-eurowizja-2/master/resources/eurowizja-aplikacja.png)
+![enter image description here](https://github.com/KrzysiekJa/db2020-project-eurowizja-2/blob/master/resources/eurowizja-aplikacja.png)
 
 Aplikacja w wyznaczonym okienku wypisuje wyniki działania funkcjonalności, zgodnie z tym jaki wybrało się przycisk typu radio button, i po przysiśnięciu przycisku Read. Pozostałe przyciski i linie pobierające dane służą zarządzaniu samą bazą, bez wypisywania komunikatow.
 
@@ -209,14 +209,18 @@ Instrukcja stosowania poleceń do bazy (przyciski):
 W celu poprawnej odpalenia aplikacji należy uprzednio pobrać paliety dzięki wywołaniu w terminalu poleceń: 
 
 - dla Windows : 
+```
                 python -m pip install pymysql
 
                 python -m pip install pyqt5
+```
 
 - dla Linux/MacOs : 
+```
                     pip3 install pymysql
 
                     pip3 install pyqt5
+```
 
 By uruchomic aplikację w terminalu należy przenieść się do katalogu lokalizacji pliku main.py i odpalić go za pomocą komendy: python3 main.py i korzystać z możliwości jakie daje nasza aplikacja.
 
