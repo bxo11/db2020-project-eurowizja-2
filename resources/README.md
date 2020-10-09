@@ -200,7 +200,7 @@ Instrukcja stosowania poleceń do bazy (przyciski):
 - Update points: wypełnić: 'Points',
 - Update song: wypełnić: 'Song name',
 - Update data: wypełnić: 'Old name', 'Old surname', 'New name', 'New surname',
-- Add person: wypełnić: 'New name', 'New surname', 'Artist's name,
+- Add person: wypełnić: 'New name', 'New surname', 'Artist's name',
 - Delete person: wypełnić: 'New name', 'New surname'.
 
 
